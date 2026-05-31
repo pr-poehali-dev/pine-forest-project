@@ -7,7 +7,6 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
-			"./1780217762479166166.html"
 	],
 	prefix: "",
 	theme: {
@@ -64,6 +63,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				display: ['Playfair Display', 'serif'],
+				body: ['Inter', 'sans-serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -71,26 +74,38 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					from: { opacity: '0', transform: 'translateY(24px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in-slow': {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
+				'slide-in-left': {
+					from: { opacity: '0', transform: 'translateX(-32px)' },
+					to: { opacity: '1', transform: 'translateX(0)' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out forwards',
+				'fade-in-slow': 'fade-in-slow 1.2s ease-out forwards',
+				'slide-in-left': 'slide-in-left 0.8s ease-out forwards',
+			},
+			backgroundImage: {
+				'pine-gradient': 'linear-gradient(135deg, hsl(150 35% 18%) 0%, hsl(210 48% 22%) 100%)',
+				'sand-gradient': 'linear-gradient(135deg, hsl(38 30% 72%) 0%, hsl(38 25% 88%) 100%)',
+				'nature-gradient': 'linear-gradient(180deg, transparent 0%, rgba(15,35,20,0.85) 100%)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
